@@ -1,3 +1,4 @@
 *.db
 *.sqlite
 *.sqlite-journal
+__pycache__/
