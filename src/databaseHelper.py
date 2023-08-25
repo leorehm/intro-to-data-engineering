@@ -42,12 +42,12 @@ class PersonDatabaseHelper(AbstractDatabaseHelper):
         self.cursor.execute(
             f'''
             CREATE TABLE IF NOT EXISTS {self.TABLE_NAME} (
-                personId INTEGER PRIMARY KEY ASC, 
+                person_id INTEGER PRIMARY KEY ASC, 
                 name TEXT, 
                 title TEXT, 
                 university TEXT,
                 department TEXT,
-                scholarId TEXT
+                scholar_id TEXT
             );
             '''
         )
@@ -55,7 +55,7 @@ class PersonDatabaseHelper(AbstractDatabaseHelper):
     def insertPerson(self, person: Person):
         insert = self.cursor.execute(
             f''' 
-            INSERT INTO {self.TABLE_NAME} (name, title, university, department, scholarId)
+            INSERT INTO {self.TABLE_NAME} (name, title, university, department, scholar_id)
             VALUES ("{person.name}", "{person.title}", "{person.university}", "{person.department}", "{person.scholar_id}");
             '''
         )
